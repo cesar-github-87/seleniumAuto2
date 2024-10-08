@@ -20,6 +20,7 @@ public class DropDownHandle {
 		WebElement dropPais = driver.findElement(By.xpath("//select[@id='country']"));
 		
 		//se crea un objeto tipo Select //este comments es para otro commit
+		//este comentario lo estoy haciendo en gitHub.. arreglalo
 		
 		Select dropPaisOption = new Select(dropPais);
 		
