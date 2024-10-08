@@ -19,7 +19,8 @@ public class DropDownHandle {
 		//encontrar dropdown normal tipo SELECT
 		WebElement dropPais = driver.findElement(By.xpath("//select[@id='country']"));
 		
-		//se crea un objeto tipo Select
+		//se crea un objeto tipo Select //este comments es para otro commit
+		
 		Select dropPaisOption = new Select(dropPais);
 		
 		List<WebElement> listaDisponible = dropPaisOption.getOptions();
