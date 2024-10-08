@@ -46,10 +46,10 @@ public class DataDrivenTestExcel {
 		XSSFSheet newSheet = newWorkbook.createSheet("Guitarras");
 		
 		XSSFRow row = newSheet.createRow(0);
-		row.createCell(0).setCellValue("Marca");
-		row.createCell(1).setCellValue("Color");
-		row.createCell(2).setCellValue("Precio");
-		row.createCell(3).setCellValue("Disponible");
+		row.createCell(0).setCellValue("Marca2");
+		row.createCell(1).setCellValue("Color2");
+		row.createCell(2).setCellValue("Precio2");
+		row.createCell(3).setCellValue("Disponible2");
 		
 		
 		XSSFRow row2 = newSheet.createRow(1);
