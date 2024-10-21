@@ -62,7 +62,7 @@ public class ExcelUtils {
 		 String cellData;
 		 
 		 try {
-			 cellData = cell.toString() ;
+			 cellData = cell.toString();
 			 
 		 }
 		 catch (Exception e){
@@ -75,8 +75,26 @@ public class ExcelUtils {
 		return cellData;
 		
 	}
-
-
+	
+	public static void setCellData (String xlsFile, String xlsSheet, int rowNum, int cellNum, String data) throws IOException {
+		
+		 fi = new FileInputStream(xlsFile);
+		 wb = new XSSFWorkbook(fi);
+		 sh = wb.getSheet(xlsSheet);
+		 row = sh.getRow(rowNum);
+		 
+		 cell = row.createCell(cellNum);
+		 cell.setCellValue(data);
+		 
+		 fo = new FileOutputStream(xlsFile);
+		 wb.write(fo);
+		 
+		 wb.close();
+		 fi.close();
+		 fo.close();
+		 
+		 
+	}
 
 
 }
