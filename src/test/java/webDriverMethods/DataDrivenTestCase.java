@@ -44,27 +44,27 @@ public class DataDrivenTestCase {
 		
 		for(int i = 1; i<=lineas;i++) {
 			for(int j = 0; j<=4; j++) {
-				System.out.println("fuera de los ifs");
+			//	System.out.println("fuera de los ifs");
 				String stringData = ExcelUtils.getCellData(filePath,"Sheet1", i, j);
 				if(j==0) {
 					System.out.println("if 0");
 					principal.sendKeys(stringData);					
 				}
 				else if(j==1) {	
-					System.out.println("if 1");
+				//	System.out.println("if 1");
 					System.out.println(stringData);
 					rate.sendKeys(stringData);					
 				}
 				else if(j==2) {
-					System.out.println("if 2");
+				//	System.out.println("if 2");
 					periodVal.sendKeys(stringData);
 				}
 				else if(j==3) {			
-					System.out.println("if 3");
+				//	System.out.println("if 3");
 					dropPeriod.selectByVisibleText(stringData);					
 				}
 				else if(j==4) {
-					System.out.println("if 4");
+				//	System.out.println("if 4");
 					freq.selectByVisibleText(stringData);
 					calculateBtn.click();
 					String result = driver.findElement(By.xpath("//span[@id='resp_matval']//strong")).getText();
@@ -86,7 +86,8 @@ public class DataDrivenTestCase {
 				
 		
 		}
-
+		driver.close();
+		driver.quit();
 	}
 
 }
