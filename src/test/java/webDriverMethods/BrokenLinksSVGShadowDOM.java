@@ -10,6 +10,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 
 public class BrokenLinksSVGShadowDOM {
 
@@ -17,7 +18,7 @@ public class BrokenLinksSVGShadowDOM {
 		
 		//CUALQUIER CODIGO DE RESPUESTA MAYOR A 400 ES UN BROKEN LINK
 		
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver = new EdgeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get("http://deadlinkcity.com/");
 		driver.manage().window().maximize();

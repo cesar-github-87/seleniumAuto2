@@ -2,7 +2,7 @@ package webDriverMethods;
 
 import java.io.IOException;
 import java.time.Duration;
-import java.util.List;
+//import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -42,36 +42,49 @@ public class DataDrivenTestCase {
 		System.out.println("Columnas="+columnas);
 		//System.out.println(ExcelUtils.getCellData(filePath, "Sheet1", 0,0 ));
 		
-		for(int i = 1; i<=1;i++) {
+		for(int i = 1; i<=lineas;i++) {
 			for(int j = 0; j<=4; j++) {
+				System.out.println("fuera de los ifs");
 				String stringData = ExcelUtils.getCellData(filePath,"Sheet1", i, j);
 				if(j==0) {
+					System.out.println("if 0");
 					principal.sendKeys(stringData);					
 				}
-				if(j==1) {		
-			
-					rate.sendKeys(stringData);
-					
+				else if(j==1) {	
+					System.out.println("if 1");
+					System.out.println(stringData);
+					rate.sendKeys(stringData);					
 				}
-				if(j==2) {
+				else if(j==2) {
+					System.out.println("if 2");
 					periodVal.sendKeys(stringData);
 				}
-				if(j==3) {												
+				else if(j==3) {			
+					System.out.println("if 3");
 					dropPeriod.selectByVisibleText(stringData);					
 				}
-				if(j==4) {
+				else if(j==4) {
+					System.out.println("if 4");
 					freq.selectByVisibleText(stringData);
-				}
-				//if(j==5) {
+					calculateBtn.click();
+					String result = driver.findElement(By.xpath("//span[@id='resp_matval']//strong")).getText();
+					System.out.println("Resultado leido de la pagina:"+ result);
+					String expectedRes = ExcelUtils.getCellData(filePath, "Sheet1", i, 5);
+					System.out.println("Resultado leido del exekl:"+ expectedRes);
 					
-				//}
-				calculateBtn.click();
-				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+					if(Double.parseDouble(expectedRes) == Double.parseDouble(result)) {
+						System.out.println("Test Passed");
+						ExcelUtils.setCellData(filePath,"Sheet1", i, 7, "Passed");
+					}else {
+						System.out.println("Test FAiled");
+						ExcelUtils.setCellData(filePath,"Sheet1", i, 7, "Fail");
+					}
+				}
+									
+			}	
+			clearBtn.click();						
 				
-			//	WebElement result = driver.findElement(By.xpath("//strong[normalize-space()='24000.00']"));
-				
-				
-			}
+		
 		}
 
 	}

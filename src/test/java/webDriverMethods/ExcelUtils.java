@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -62,7 +63,10 @@ public class ExcelUtils {
 		 String cellData;
 		 
 		 try {
-			 cellData = cell.toString();
+			//cellData = cell.toString();
+			 DataFormatter formatter = new DataFormatter();
+			 cellData = formatter.formatCellValue(cell);//Regresa el valor convertido a string SIN IMPORTAR EL FORMATO DE LA CELDA
+			 
 			 
 		 }
 		 catch (Exception e){
