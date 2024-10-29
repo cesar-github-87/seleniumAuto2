@@ -48,7 +48,10 @@ public class TestNGTestCase2 {
 		new Actions(driver).moveToElement(header);
 		header.click();
 		
-		WebElement guitarra = driver.findElement(By.cssSelector("img[src=\"//images.ctfassets.net/m8onsx4mm13s/FlismlnuH62UIWkMajohC/cd7889925519a76123e4231fbdad417b/LPSU3P00EBGH1_500x500.png?fit=fill&w=250&h=500\"]"));
+		
+		WebElement guitarra = driver.findElement(By.xpath("//body[1]/main[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[73]/h3[1]/a[1]"));
+		new Actions(driver).moveToElement(guitarra).perform();
+		//elemWait.until(ExpectedConditions.elementToBeClickable(guitarra));
 		guitarra.click();
 	}
 	
