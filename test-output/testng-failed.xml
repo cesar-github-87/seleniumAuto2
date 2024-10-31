@@ -3,11 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestNG.TestNGTestCase2">
+      <class name="automationExercises.RegisterUser">
         <methods>
-          <include name="clickOption"/>
+          <include name="launchBrowser"/>
+          <include name="isNewUserSignupVisible"/>
+          <include name="isPageVisible"/>
         </methods>
-      </class> <!-- TestNG.TestNGTestCase2 -->
+      </class> <!-- automationExercises.RegisterUser -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
