@@ -65,7 +65,7 @@ public class RegisterUser {
 	  driver.findElement(By.xpath("//a[normalize-space()='Signup / Login']")).click();
 	  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(6));
 	  
-	  if(driver.findElement(By.xpath("//div[@class='signup-forml']")).isDisplayed()) {
+	  if(driver.findElement(By.xpath("//div[@class='signup-form']")).isDisplayed()) {
 		  Assert.assertTrue(true);
 	  }else {
 		  Assert.assertTrue(false);
