@@ -14,6 +14,7 @@ public class DataDrivenTestCase {
 
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
+	
 		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		driver.get("https://www.moneycontrol.com/fixed-income/calculator/state-bank-of-india-sbi/fixed-deposit-calculator-SBI-BSB001.html");
